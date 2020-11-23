@@ -15,16 +15,16 @@ public class Q5 {
 }
 
 interface Colecao {
-    public void inserir(Pessoa2 p);
+    public void inserir(Pessoa p);
     public int tamanhoColecaoNaoNull();
 }
 
 class ColecaoVetor implements Colecao{
     private int cursor;
-    private Pessoa2[] pessoas ;
+    private Pessoa[] pessoas ;
 
     @Override
-    public void inserir(Pessoa2 _pessoa){
+    public void inserir(Pessoa _pessoa){
         pessoas[cursor] = _pessoa;
         cursor++;
     }
@@ -39,17 +39,17 @@ class ColecaoVetor implements Colecao{
 
     public ColecaoVetor() {
         this.cursor = 0;
-        this.pessoas = new Pessoa2[5];
+        this.pessoas = new Pessoa[5];
     }
 
 
 }
 
-class Pessoa2 {
+class Pessoa {
     protected String nome;
     protected String cpf; 
 
-    public Pessoa2(String _nome, String _cpf){
+    public Pessoa(String _nome, String _cpf){
         nome = _nome;
         cpf = _cpf;    
     }
@@ -71,7 +71,7 @@ class Pessoa2 {
     }  
 }
 
-class Professor extends Pessoa2 {
+class Professor extends Pessoa {
     protected String formacao;
     protected String area;
 
@@ -83,7 +83,7 @@ class Professor extends Pessoa2 {
     
 }
 
-class Aluno extends Pessoa2 {
+class Aluno extends Pessoa {
     protected String matricula;
     protected String curso;
 
@@ -110,4 +110,3 @@ class Aluno extends Pessoa2 {
     }
 
 }
-
