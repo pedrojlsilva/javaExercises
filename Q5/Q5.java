@@ -10,6 +10,11 @@ public class Q5 {
         Aluno aluno = new Aluno("eu", "963.852.741-12", "eng. comp.", "robotica");
         colecao.inserir(aluno);
         System.out.println("ainda existem "+colecao.tamanhoColecaoNaoNull()+" vagas.");
+        String [] pessoasArray=colecao.getPessoasColecao();
+
+        for(int i=0; i<pessoasArray.length;i++){
+            System.out.println(pessoasArray[i]);
+        }
         
     }
 }
@@ -31,10 +36,15 @@ class ColecaoVetor implements Colecao{
 
     @Override
     public int tamanhoColecaoNaoNull(){
-        for(int i=0; i<cursor;i++){
-            System.out.println(pessoas[i].getNome());
-        }
         return 5-cursor;
+    }
+
+    protected String[] getPessoasColecao(){
+        String [] pessoasCadastradas = new String[cursor];
+        for(int i=0; i<cursor;i++){
+            pessoasCadastradas[i]=pessoas[i].getNome();
+        }
+        return pessoasCadastradas;
     }
 
     public ColecaoVetor() {
